@@ -23,7 +23,7 @@ const stylesLocal = () => {
       autoprefixer()
     ]))
     .pipe(csso())
-    .pipe(rename("styles.min.css"))
+    .pipe(rename("style.css"))
     .pipe(sourcemap.write("."))
     .pipe(gulp.dest("source/css"))
     .pipe(sync.stream());
@@ -152,7 +152,7 @@ const cleanBuild = () => {
 exports.cleanBuild = cleanBuild;
 
 // satrt local environment
-exports.default = gulp.series(
+exports.start = gulp.series(
   stylesLocal, spriteLocal, serverLocal, watcher
 );
 
